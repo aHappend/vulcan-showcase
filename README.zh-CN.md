@@ -1,0 +1,41 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/logo-dark.svg">
+    <img src="brand/logo.svg" width="480" alt="Vulcan">
+  </picture>
+</p>
+
+<h1 align="center">把想法，锻造成硬件。</h1>
+
+<p align="center">
+  开源 RTL 设计，展示真实工程成果。
+  <br>
+  <a href="https://ahappend.github.io/vulcan/">访问官网</a>
+  · <a href="README.md">English</a>
+  · <a href="brand/">品牌素材</a>
+</p>
+
+Vulcan 让 AI 参与硬件开发，将设计目标转化为可使用的 RTL 成果。
+这里展示精选硬件作品、产品亮点和 Vulcan 的视觉形象。
+
+## 精选作品
+
+| 项目 | 产品亮点 | 已取得的结果 |
+| --- | --- | --- |
+| [Ready/valid FIFO](projects/ready-valid-fifo/) | 参数化缓存、背压、同时入队出队、非二次幂深度 | 13 种配置、39 组种子、82,645 个仿真周期 |
+| [多通道 DMA](projects/multichannel-dma/) | 描述符队列、轮询仲裁、32 位缓存传输、状态与中断 | 7 个 RTL 模块、9 种回归配置、通用综合 |
+
+两项设计均已完成相应范围的 RTL 工程验收，公开源码保留已验收实现。
+所列结果来自仿真及明确注明的通用综合，不代表芯片实测或物理签核。
+
+## 探索更多
+
+- **[Vulcan 官网](https://ahappend.github.io/vulcan/)**：了解产品。
+- **[开源设计](projects/)**：浏览 RTL 与接口介绍。
+- **[视觉素材](brand/)**：原版 Logo、品牌图标与应用图标。
+
+后续完成验收的设计将持续加入成果集。
+
+## 许可
+
+公开的代码、文档与视觉素材采用 [MIT License](LICENSE)。

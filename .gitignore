@@ -1,0 +1,9 @@
+*.vvp
+*.vcd
+*.fst
+*.log
+__pycache__/
+.vulcan/
+.argus/
+operator-evidence/
+build/
