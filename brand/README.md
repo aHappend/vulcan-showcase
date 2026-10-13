@@ -11,13 +11,14 @@ Original artwork for the Vulcan hardware forge.
 | --- | --- |
 | [Primary logo](logo.svg) | Light backgrounds |
 | [Reversed logo](logo-dark.svg) | Dark backgrounds |
-| [Standalone mark](mark.svg) | Brand-red symbol on transparent background |
+| [Standalone mark](mark.svg) | Brick-red symbol on transparent background |
 | [Reversed mark](mark-dark.svg) | White symbol on transparent background |
-| [Application icon](icon.svg) | Brand-red rounded square |
+| [Application icon](icon.svg) | Brick-red rounded square |
+| [Sharing cover](social-preview.png) | 1280 × 640 px repository preview |
 
-**Brand red:** `#BB3E23` · **Dark background:** `#191A1D`
+**Brand red:** `#BB3E23` · **Reverse:** `#FFFFFF`
 
-The V-shaped negative space combines a molten drop and a crucible.
+The flame silhouette and V-shaped negative space share one continuous contour.
 Keep the original proportions, spacing and colors when presenting the brand.
 The SVG artwork scales without external fonts.
 
