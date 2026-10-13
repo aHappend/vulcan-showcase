@@ -39,6 +39,29 @@ files here are the accepted implementations, ready to explore and integrate.
 Results describe simulation and, where stated, generic synthesis; they do not
 claim silicon measurements or physical signoff.
 
+## Delivery packages for new projects
+
+Future additions will include a design delivery package, not just RTL:
+
+- Accepted RTL, interface/architecture documentation and integration instructions.
+- A public technical report (`REPORT.pdf`) and its source, with English-name
+  attribution and no personal contact details.
+- Reproducible verification sources, configuration/seed matrices, tool versions
+  and commands, plus the simulation/synthesis evidence supporting the report.
+- A project-relative evidence index: each published result must link to an
+  included public artifact. Missing evidence and scope limits remain explicit.
+
+Public reports are separate editions when private references need removal.
+Technical results, thresholds and material limitations must not change during
+publication; the public edition is reviewed after editing and rendering.
+Closed framework code, prompts, provider sessions, credentials, private
+experience capsules and internal operating records are not part of the package.
+Evidence selection must preserve material failures and repairs, not present a
+misleading success-only record. Redistribution rights must permit publication.
+
+This standard applies to future additions. Existing entries remain selected
+RTL releases; their reports and evidence are not being retroactively repackaged.
+
 ## Explore
 
 - **[Project website](https://ahappend.github.io/vulcan/)** — meet Vulcan.
