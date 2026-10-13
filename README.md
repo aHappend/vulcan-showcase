@@ -31,6 +31,7 @@ Vulcan visual identity.
 | [Credit-aware deficit scheduler](projects/credit-scheduler/) | Byte-cost deficit round robin, outstanding credits, stable dispatch reservations, live configuration | 15 seeded runs, 145,884 simulation cycles, 5,544 final-epoch completions, generic synthesis |
 | [Tagged completion and reorder](projects/tagged-completion-reorder/) | Shared generation-tagged issue, out-of-order completions, per-client ordered retirement, live status | Five RTL modules, 15 seeded runs, 15,658 final-epoch retirements, 320 legal parameter compilations |
 | [Banked SECDED scratchpad](projects/banked-ecc-scratchpad/) | Error-protected bank storage, atomic byte writes, ordered client responses, background scrub | Seven RTL modules, 15 seeded runs, 19,526 final-epoch transactions, 128 legal parameter elaborations |
+| [Streaming bilinear image scaler](projects/streaming-bilinear-image-scaler/) | Fixed-point grayscale scaling, two-row storage, frame-stable configuration, backpressure and error recovery | Five RTL modules, 15 seeded runs, 252 complete frames, 8,520 compared pixels, generic synthesis |
 
 These designs completed their scoped RTL engineering acceptance. The source
 files here are the accepted implementations, ready to explore and integrate.
