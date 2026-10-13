@@ -28,6 +28,7 @@ Vulcan visual identity.
 | [Packet router](projects/packet-router/) | Store-and-forward queues, configurable routing, concurrent outputs, whole-packet arbitration | 17 configurations, 51 seeded runs, 110,088 simulation cycles, generic synthesis |
 | [Memory fabric](projects/memory-arbiter/) | Multi-client bank arbitration, reserved response slots, ordered retirement, errors and interrupts | 27 seeded runs, eight endpoint checks, 6,624 measured transactions, generic synthesis |
 | [Fixed-point stream processor](projects/stream-processor/) | Interleaved three-tap processing, frame-stable configuration, saturation/wrap, buffered backpressure | 27 seeded runs, 56,945 simulation cycles, 18,585 final-epoch valid retirements, generic synthesis |
+| [Credit-aware deficit scheduler](projects/credit-scheduler/) | Byte-cost deficit round robin, outstanding credits, stable dispatch reservations, live configuration | 15 seeded runs, 145,884 simulation cycles, 5,544 final-epoch completions, generic synthesis |
 
 These designs completed their scoped RTL engineering acceptance. The source
 files here are the accepted implementations, ready to explore and integrate.
