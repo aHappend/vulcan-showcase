@@ -25,8 +25,9 @@ Vulcan visual identity.
 | --- | --- | --- |
 | [Ready/valid FIFO](projects/ready-valid-fifo/) | Parameterized buffering, backpressure, simultaneous enqueue/dequeue, arbitrary positive depths | 13 configurations, 39 seeded runs, 82,645 simulation cycles |
 | [Multi-channel DMA](projects/multichannel-dma/) | Queued descriptors, round-robin scheduling, buffered 32-bit transfers, status and interrupts | Seven RTL modules, nine regression configurations, generic synthesis |
+| [Packet router](projects/packet-router/) | Store-and-forward queues, configurable routing, concurrent outputs, whole-packet arbitration | 17 configurations, 51 seeded runs, 110,088 simulation cycles, generic synthesis |
 
-Both designs completed their scoped RTL engineering acceptance. The source
+These designs completed their scoped RTL engineering acceptance. The source
 files here are the accepted implementations, ready to explore and integrate.
 Results describe simulation and, where stated, generic synthesis; they do not
 claim silicon measurements or physical signoff.
