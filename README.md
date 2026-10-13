@@ -29,6 +29,7 @@ Vulcan visual identity.
 | [Memory fabric](projects/memory-arbiter/) | Multi-client bank arbitration, reserved response slots, ordered retirement, errors and interrupts | 27 seeded runs, eight endpoint checks, 6,624 measured transactions, generic synthesis |
 | [Fixed-point stream processor](projects/stream-processor/) | Interleaved three-tap processing, frame-stable configuration, saturation/wrap, buffered backpressure | 27 seeded runs, 56,945 simulation cycles, 18,585 final-epoch valid retirements, generic synthesis |
 | [Credit-aware deficit scheduler](projects/credit-scheduler/) | Byte-cost deficit round robin, outstanding credits, stable dispatch reservations, live configuration | 15 seeded runs, 145,884 simulation cycles, 5,544 final-epoch completions, generic synthesis |
+| [Tagged completion and reorder](projects/tagged-completion-reorder/) | Shared generation-tagged issue, out-of-order completions, per-client ordered retirement, live status | Five RTL modules, 15 seeded runs, 15,658 final-epoch retirements, 320 legal parameter compilations |
 
 These designs completed their scoped RTL engineering acceptance. The source
 files here are the accepted implementations, ready to explore and integrate.
