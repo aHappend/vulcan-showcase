@@ -11,6 +11,7 @@
   Open RTL designs. Real engineering results.
   <br>
   <a href="https://ahappend.github.io/vulcan/">Visit the website</a>
+  · <a href="https://github.com/aHappend/anvil-e">Anvil-E</a>
   · <a href="README.zh-CN.md">中文</a>
   · <a href="brand/">Brand assets</a>
 </p>
@@ -62,9 +63,18 @@ misleading success-only record. Redistribution rights must permit publication.
 This standard applies to future additions. Existing entries remain selected
 RTL releases; their reports and evidence are not being retroactively repackaged.
 
+## Anvil AI silicon family
+
+Beyond standalone IP blocks, Vulcan is used to develop the **Anvil** AI accelerator family:
+
+| Series | Generation | Target model & scope | Repository |
+| --- | --- | --- | --- |
+| **[Anvil-E](https://github.com/aHappend/anvil-e)** | **Anvil-E1** (Gen-1) | [Google EmbeddingGemma-2](https://huggingface.co/google/embeddinggemma-2) text-only embedding accelerator (24-layer hybrid 5:1 sliding/full attention, 512d → 768d projection, mean pooling and L2 normalization); subsequent iterations extend to vision and audio modalities | [`aHappend/anvil-e`](https://github.com/aHappend/anvil-e) |
+
 ## Explore
 
 - **[Project website](https://ahappend.github.io/vulcan/)** — meet Vulcan.
+- **[Anvil-E silicon series](https://github.com/aHappend/anvil-e)** — open delivery packages for the Anvil-E embedding accelerator line (`Anvil-E1`).
 - **[RTL projects](projects/)** — browse the released designs and their interfaces.
 - **[Visual identity](brand/)** — original logos, marks and application icon.
 

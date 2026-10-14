@@ -11,6 +11,7 @@
   开源 RTL 设计，展示真实工程成果。
   <br>
   <a href="https://ahappend.github.io/vulcan/">访问官网</a>
+  · <a href="https://github.com/aHappend/anvil-e">Anvil-E</a>
   · <a href="README.md">English</a>
   · <a href="brand/">品牌素材</a>
 </p>
@@ -52,9 +53,18 @@ Vulcan 让 AI 参与硬件开发，将设计目标转化为可使用的 RTL 成�
 
 此标准仅用于后续新增项目。现有条目仍是精选 RTL 发布，不回头补做报告与证据打包。
 
+## Anvil AI 芯片家族
+
+除独立硬件 IP 外，Vulcan 正持续用于 **Anvil** AI 加速芯片家族的研发：
+
+| 系列 | 代际 | 目标模型与范围 | 公开仓库 |
+| --- | --- | --- | --- |
+| **[Anvil-E](https://github.com/aHappend/anvil-e)** | **Anvil-E1**（第一代） | 面向 [Google EmbeddingGemma-2](https://huggingface.co/google/embeddinggemma-2) 的纯文本嵌入加速芯片（24 层 5:1 滑动窗口/全局注意力混排、512d → 768d 投影、均值池化与 L2 归一化），后续代际扩展视觉与音频多模态 | [`aHappend/anvil-e`](https://github.com/aHappend/anvil-e) |
+
 ## 探索更多
 
 - **[Vulcan 官网](https://ahappend.github.io/vulcan/)**：了解产品。
+- **[Anvil-E 芯片系列](https://github.com/aHappend/anvil-e)**：查看 Anvil-E 嵌入加速芯片系列（`Anvil-E1`）公开交付包。
 - **[开源设计](projects/)**：浏览 RTL 与接口介绍。
 - **[视觉素材](brand/)**：原版 Logo、品牌图标与应用图标。
 
