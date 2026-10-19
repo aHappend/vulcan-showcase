@@ -17,7 +17,8 @@
   · <a href="brand/">Brand assets</a>
 </p>
 
-Vulcan brings AI-assisted hardware development to concrete, reusable designs.
+Vulcan is an independent hardware engineering project, not part of Argus AI Team.
+It brings AI-assisted hardware development to concrete, reusable designs.
 This gallery presents selected RTL deliverables, product highlights and the
 Vulcan visual identity.
 
