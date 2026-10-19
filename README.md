@@ -11,7 +11,8 @@
   Open RTL designs. Real engineering results.
   <br>
   <a href="https://ahappend.github.io/vulcan/">Visit the website</a>
-  · <a href="https://github.com/aHappend/anvil-e">Anvil-E</a>
+  · <a href="#accelerator-families">Accelerators</a>
+  · <a href="#reusable-rtl-families-and-systems">RTL families</a>
   · <a href="README.zh-CN.md">中文</a>
   · <a href="brand/">Brand assets</a>
 </p>
@@ -63,18 +64,36 @@ misleading success-only record. Redistribution rights must permit publication.
 This standard applies to future additions. Existing entries remain selected
 RTL releases; their reports and evidence are not being retroactively repackaged.
 
-## Anvil AI silicon family
+## Accelerator families
 
-Beyond standalone IP blocks, Vulcan is used to develop the **Anvil** AI accelerator family:
+Beyond the ten component releases above, Vulcan supports the **ANVIL** AI
+accelerator family. Publication state below is scoped to October 19, 2026.
 
-| Series | Generation | Target model & scope | Repository |
-| --- | --- | --- | --- |
-| **[Anvil-E](https://github.com/aHappend/anvil-e)** | **Anvil-E1** (Gen-1) | [Google EmbeddingGemma-2](https://huggingface.co/google/embeddinggemma-2) text-only embedding accelerator (24-layer hybrid 5:1 sliding/full attention, 512d → 768d projection, mean pooling and L2 normalization); subsequent iterations extend to vision and audio modalities | [`aHappend/anvil-e`](https://github.com/aHappend/anvil-e) |
+| Family | Focus | Public delivery boundary |
+| --- | --- | --- |
+| **ANVIL — [E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)** | Text/vision embedding and quantized causal-inference RTL | E1/E2 and Q1 have published engineering packages and reports; E3/Q2 remain in development. Official-weight comparisons use bounded remapped slices, not complete target-model acceptance. Q1 converts binary16 storage to Q16.16 execution, not IEEE FP16 arithmetic. |
+
+## Reusable RTL families and systems
+
+RIVET and BILLET are grouped by family rather than listed as individual chips.
+Generations, reports and verification details belong in their own repositories;
+these are separate from the ten component releases.
+
+| Family / system | Product lines | Public delivery boundary |
+| --- | --- | --- |
+| **RIVET** | [A — AES/GCM, key/context management and DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC and saved contexts](https://github.com/aHappend/rivet-h) | Generations 1–3 published in both lines, with scoped RTL/report packages |
+| **BILLET** | [T — FFT/IFFT and spectral analysis](https://github.com/aHappend/billet-t) · [F — FIR/IIR filtering](https://github.com/aHappend/billet-f) | Generations 1–3 published in both lines; arithmetic, coefficient and configuration limits remain generation-specific |
+| **[SABLE](https://github.com/aHappend/sable)** | Reliable-message transport protocol system | Published RTL/report package, with bounded protocol and simulation scope |
+
+Publication does not imply fabricated silicon, physical signoff, full-model
+validation or cryptographic certification. See each package's evidence and
+limitations before reuse.
 
 ## Explore
 
 - **[Project website](https://ahappend.github.io/vulcan/)** — meet Vulcan.
-- **[Anvil-E silicon series](https://github.com/aHappend/anvil-e)** — open delivery packages for the Anvil-E embedding accelerator line (`Anvil-E1`).
+- **[ANVIL E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)** — accelerator-family packages, reports and current acceptance boundaries.
+- **[RIVET & BILLET](#reusable-rtl-families-and-systems)** — grouped crypto/DSP RTL families and the SABLE protocol system.
 - **[RTL projects](projects/)** — browse the released designs and their interfaces.
 - **[Visual identity](brand/)** — original logos, marks and application icon.
 

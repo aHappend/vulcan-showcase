@@ -11,7 +11,8 @@
   开源 RTL 设计，展示真实工程成果。
   <br>
   <a href="https://ahappend.github.io/vulcan/">访问官网</a>
-  · <a href="https://github.com/aHappend/anvil-e">Anvil-E</a>
+  · <a href="#加速器家族">加速器家族</a>
+  · <a href="#可复用-rtl-家族与系统">RTL 家族</a>
   · <a href="README.md">English</a>
   · <a href="brand/">品牌素材</a>
 </p>
@@ -53,18 +54,34 @@ Vulcan 让 AI 参与硬件开发，将设计目标转化为可使用的 RTL 成�
 
 此标准仅用于后续新增项目。现有条目仍是精选 RTL 发布，不回头补做报告与证据打包。
 
-## Anvil AI 芯片家族
+## 加速器家族
 
-除独立硬件 IP 外，Vulcan 正持续用于 **Anvil** AI 加速芯片家族的研发：
+除上述十个基础 IP 外，Vulcan 还用于 **ANVIL** AI 加速器家族的研发。
+以下公开交付状态截至 2026 年 10 月 19 日。
 
-| 系列 | 代际 | 目标模型与范围 | 公开仓库 |
-| --- | --- | --- | --- |
-| **[Anvil-E](https://github.com/aHappend/anvil-e)** | **Anvil-E1**（第一代） | 面向 [Google EmbeddingGemma-2](https://huggingface.co/google/embeddinggemma-2) 的纯文本嵌入加速芯片（24 层 5:1 滑动窗口/全局注意力混排、512d → 768d 投影、均值池化与 L2 归一化），后续代际扩展视觉与音频多模态 | [`aHappend/anvil-e`](https://github.com/aHappend/anvil-e) |
+| 家族 | 方向 | 公开交付边界 |
+| --- | --- | --- |
+| **ANVIL — [E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)** | 文本/视觉嵌入与量化因果推理 RTL | E1/E2 与 Q1 已发布工程交付包和报告；E3/Q2 仍在研发。官方权重对照采用限定的重映射切片，不等于完整目标模型验收。Q1 将 binary16 存储转换为 Q16.16 执行，不是 IEEE FP16 运算。 |
+
+## 可复用 RTL 家族与系统
+
+RIVET 与 BILLET 按家族集中展示，不把每代小芯片拆成独立条目。
+各代实现、报告与验证细节保留在对应仓库；它们与上述十个基础 IP 分开。
+
+| 家族 / 系统 | 产品线 | 公开交付边界 |
+| --- | --- | --- |
+| **RIVET** | [A — AES/GCM、密钥/上下文管理与 DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC 与可保存哈希上下文](https://github.com/aHappend/rivet-h) | 两条产品线均已发布第 1–3 代，提供限定范围的 RTL/报告交付包 |
+| **BILLET** | [T — FFT/IFFT 与频谱分析](https://github.com/aHappend/billet-t) · [F — FIR/IIR 滤波](https://github.com/aHappend/billet-f) | 两条产品线均已发布第 1–3 代；运算、系数及配置限制按各代分别声明 |
+| **[SABLE](https://github.com/aHappend/sable)** | 可靠消息传输协议系统 | 已发布 RTL/报告交付包，保留协议及仿真的限定范围 |
+
+公开发布不等于流片、物理签核、完整模型验证或密码安全认证。
+复用前请阅读对应交付包的证据与限制。
 
 ## 探索更多
 
 - **[Vulcan 官网](https://ahappend.github.io/vulcan/)**：了解产品。
-- **[Anvil-E 芯片系列](https://github.com/aHappend/anvil-e)**：查看 Anvil-E 嵌入加速芯片系列（`Anvil-E1`）公开交付包。
+- **[ANVIL E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)**：查看加速器家族交付包、报告与当前验收边界。
+- **[RIVET 与 BILLET](#可复用-rtl-家族与系统)**：集中浏览密码/DSP RTL 家族及 SABLE 协议系统。
 - **[开源设计](projects/)**：浏览 RTL 与接口介绍。
 - **[视觉素材](brand/)**：原版 Logo、品牌图标与应用图标。
 
