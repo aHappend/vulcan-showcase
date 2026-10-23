@@ -68,15 +68,15 @@ RTL releases; their reports and evidence are not being retroactively repackaged.
 ## Accelerator families
 
 Beyond the ten component releases above, Vulcan supports the **ANVIL** AI
-accelerator family. Publication state below is scoped to October 19, 2026.
+accelerator family as the flagship compute line of its seven-family workshop matrix (`ANVIL`, `RIVET`, `BILLET`, `SWAGE`, `BELLOWS`, `CRUCIBLE`, `FURNACE`), enforcing a `100 MHz+` static timing baseline.
 
 | Family | Focus | Public delivery boundary |
 | --- | --- | --- |
-| **ANVIL — [E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)** | Text/vision embedding and quantized causal-inference RTL | E1/E2 and Q1 have published engineering packages and reports; E3/Q2 remain in development. Official-weight comparisons use bounded remapped slices, not complete target-model acceptance. Q1 converts binary16 storage to Q16.16 execution, not IEEE FP16 arithmetic. |
+| **ANVIL — [Q](https://github.com/aHappend/anvil-q) / [E](https://github.com/aHappend/anvil-e)** | Quantized causal-LLM (`Q1` `108.48 MHz`, `Q2` `101.39 MHz`) and trimodal embedding (`E1` `107.31 MHz`, `E2` `111.45 MHz`, `E3` `111.63 MHz`) RTL | All five accelerators (`Q1`, `Q2`, `E1`, `E2`, `E3`) have published `100 MHz+` RTL packages, IEEE/ACM-grade monolingual dual-track reports (`SHOWCASE_REPORT.pdf` / `SHOWCASE_REPORT.zh-CN.pdf` / `REPORT.pdf`), Quartus 17.1 TimeQuest STA signoff, and Intel Arria 10 GX PCIe Gen3x8 HIL verification. |
 
 ## Reusable RTL families and systems
 
-RIVET and BILLET are grouped by family rather than listed as individual chips.
+RIVET, BILLET, SWAGE, BELLOWS, CRUCIBLE, and FURNACE complete the seven-family workshop matrix alongside ANVIL.
 Generations, reports and verification details belong in their own repositories;
 these are separate from the ten component releases.
 
@@ -84,6 +84,8 @@ these are separate from the ten component releases.
 | --- | --- | --- |
 | **RIVET** | [A — AES/GCM, key/context management and DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC and saved contexts](https://github.com/aHappend/rivet-h) | Generations 1–3 published in both lines, with scoped RTL/report packages |
 | **BILLET** | [T — FFT/IFFT and spectral analysis](https://github.com/aHappend/billet-t) · [F — FIR/IIR filtering](https://github.com/aHappend/billet-f) | Generations 1–3 published in both lines; arithmetic, coefficient and configuration limits remain generation-specific |
+| **SWAGE / BELLOWS** | Image processing & ISP (`Swage`) · Streaming compression & decompression (`Bellows`) | Initial cores published in [`projects/streaming-bilinear-image-scaler/`](projects/streaming-bilinear-image-scaler/) and [`projects/streaming-lz4-block-decoder/`](projects/streaming-lz4-block-decoder/); dedicated family lines planned under the `100 MHz+` baseline |
+| **CRUCIBLE / FURNACE** | Graphics rendering (`Crucible`) · Heterogeneous SoC integration (`Furnace`) | Roadmap families following `Anvil-Q` / `Anvil-E` expansion |
 | **[SABLE](https://github.com/aHappend/sable)** | Reliable-message transport protocol system | Published RTL/report package, with bounded protocol and simulation scope |
 
 Publication does not imply fabricated silicon, physical signoff, full-model

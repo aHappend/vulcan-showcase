@@ -57,22 +57,23 @@ Vulcan 是独立的硬件工程项目，不属于 Argus AI Team。
 
 ## 加速器家族
 
-除上述十个基础 IP 外，Vulcan 还用于 **ANVIL** AI 加速器家族的研发。
-以下公开交付状态截至 2026 年 10 月 19 日。
+除上述十个基础 IP 外，Vulcan 以 **ANVIL（铁砧）** AI 与大模型计算家族作为七大工坊芯片家族矩阵（`ANVIL`、`RIVET`、`BILLET`、`SWAGE`、`BELLOWS`、`CRUCIBLE`、`FURNACE`）的首要重心，并默认执行 `100 MHz+` 静态时序基线。
 
 | 家族 | 方向 | 公开交付边界 |
 | --- | --- | --- |
-| **ANVIL — [E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)** | 文本/视觉嵌入与量化因果推理 RTL | E1/E2 与 Q1 已发布工程交付包和报告；E3/Q2 仍在研发。官方权重对照采用限定的重映射切片，不等于完整目标模型验收。Q1 将 binary16 存储转换为 Q16.16 执行，不是 IEEE FP16 运算。 |
+| **ANVIL — [Q](https://github.com/aHappend/anvil-q) / [E](https://github.com/aHappend/anvil-e)** | 量化因果大模型推理（`Q1` `108.48 MHz`、`Q2` `101.39 MHz`）与多模态嵌入（`E1` `107.31 MHz`、`E2` `111.45 MHz`、`E3` `111.63 MHz`）RTL | 全部五颗芯片（`Q1`、`Q2`、`E1`、`E2`、`E3`）均已发布 `100 MHz+` RTL 交付包、IEEE/ACM 学术论文级双轨单语报告（`SHOWCASE_REPORT.pdf` / `SHOWCASE_REPORT.zh-CN.pdf` / `REPORT.pdf`）、Quartus 17.1 TimeQuest STA 签核与 Intel Arria 10 GX PCIe Gen3x8 物理板级 HIL 实测证据。 |
 
 ## 可复用 RTL 家族与系统
 
-RIVET 与 BILLET 按家族集中展示，不把每代小芯片拆成独立条目。
+RIVET、BILLET、SWAGE、BELLOWS、CRUCIBLE 与 FURNACE 与 ANVIL 共同构成七大工坊芯片家族矩阵。
 各代实现、报告与验证细节保留在对应仓库；它们与上述十个基础 IP 分开。
 
 | 家族 / 系统 | 产品线 | 公开交付边界 |
 | --- | --- | --- |
-| **RIVET** | [A — AES/GCM、密钥/上下文管理与 DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC 与可保存哈希上下文](https://github.com/aHappend/rivet-h) | 两条产品线均已发布第 1–3 代，提供限定范围的 RTL/报告交付包 |
-| **BILLET** | [T — FFT/IFFT 与频谱分析](https://github.com/aHappend/billet-t) · [F — FIR/IIR 滤波](https://github.com/aHappend/billet-f) | 两条产品线均已发布第 1–3 代；运算、系数及配置限制按各代分别声明 |
+| **RIVET（铆钉）** | [A — AES/GCM、密钥/上下文管理与 DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC 与可保存哈希上下文](https://github.com/aHappend/rivet-h) | 两条产品线均已发布第 1–3 代，提供限定范围的 RTL/报告交付包 |
+| **BILLET（金属坯料）** | [T — FFT/IFFT 与频谱分析](https://github.com/aHappend/billet-t) · [F — FIR/IIR 滤波](https://github.com/aHappend/billet-f) | 两条产品线均已发布第 1–3 代；运算、系数及配置限制按各代分别声明 |
+| **SWAGE（型锻模） / BELLOWS（风箱）** | 图像处理与 ISP（`Swage`）· 压缩、解压与流式数据处理（`Bellows`） | 首个核心已发布于 [`projects/streaming-bilinear-image-scaler/`](projects/streaming-bilinear-image-scaler/) 与 [`projects/streaming-lz4-block-decoder/`](projects/streaming-lz4-block-decoder/)；独立芯片系列按 `100 MHz+` 基线持续推进 |
+| **CRUCIBLE（坩埚） / FURNACE（工业炉）** | 图形处理与渲染（`Crucible`）· 大型异构 SoC 与完整计算系统（`Furnace`） | 后续规划芯片系列，随核心 IP 与 `Anvil` 系列迭代推进 |
 | **[SABLE](https://github.com/aHappend/sable)** | 可靠消息传输协议系统 | 已发布 RTL/报告交付包，保留协议及仿真的限定范围 |
 
 公开发布不等于流片、物理签核、完整模型验证或密码安全认证。
