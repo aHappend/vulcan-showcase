@@ -502,6 +502,370 @@ A synthesizable store-and-forward packet switch with configurable destination ro
 | **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
 | **License** | [MIT License](../../LICENSE) |
 
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Store-and-Forward Multi-Port Packet Router</h1>
+  <p><strong>Configurable Routing Table, Per-Port Input Queues, Whole-Packet Contention Arbitration & Error Drop</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-17_Configs_%C2%B7_110,088_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable store-and-forward packet switch with configurable destination routing, per-ingress buffering, wormhole/whole-packet output arbitration without mid-packet interleaving, and deterministic malformed-frame rejection.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/packet_arbiter.sv`](rtl/packet_arbiter.sv), [`rtl/packet_csr.sv`](rtl/packet_csr.sv), [`rtl/packet_descriptors.sv`](rtl/packet_descriptors.sv), [`rtl/packet_ingress.sv`](rtl/packet_ingress.sv), [`rtl/packet_output.sv`](rtl/packet_output.sv), [`rtl/packet_routes.sv`](rtl/packet_routes.sv), [`rtl/packet_switch.sv`](rtl/packet_switch.sv) |
+| **Verification Summary** | 17 configurations · 51 seeded runs · 110,088 simulation cycles · 0 packet corruption |
+| **License** | [MIT License](../../LICENSE) |
+
 A configurable SystemVerilog switch with independent ingress queues and
 whole-packet arbitration for each output.
 
@@ -580,6 +944,45 @@ iverilog -g2012 -s packet_switch -t null rtl/*.sv
 ```
 
 This checks compilation only; it does not rerun the reported regression.
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
 ---
 <p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

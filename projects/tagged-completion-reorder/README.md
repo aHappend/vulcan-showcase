@@ -502,6 +502,370 @@ A split-transaction reorder buffer using generation-qualified tags to accept out
 | **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
 | **License** | [MIT License](../../LICENSE) |
 
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Generation-Tagged Out-of-Order Completion Reorder Unit</h1>
+  <p><strong>Tag Allocation, Out-of-Order Split Transaction Capture & Ordered Client Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_320_Builds-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A split-transaction reorder buffer using generation-qualified tags to accept out-of-order backend completions and retire responses strictly in request order per client.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/client_reorder.sv`](rtl/client_reorder.sv), [`rtl/control_status.sv`](rtl/control_status.sv), [`rtl/issue_reserver.sv`](rtl/issue_reserver.sv), [`rtl/tag_owner_pool.sv`](rtl/tag_owner_pool.sv), [`rtl/tagged_completion_reorder.sv`](rtl/tagged_completion_reorder.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 320 parameter-sweep compilation checks |
+| **License** | [MIT License](../../LICENSE) |
+
 A synthesizable multi-client subsystem that accepts requests, shares a bounded
 tagged issue channel, handles out-of-order completions and retires results in
 acceptance order for each client. Independent response backpressure does not
@@ -550,6 +914,45 @@ permanent backpressure.
 
 These are scoped RTL simulation and generic synthesis results, not physical
 signoff, technology-mapped PPA, FPGA measurements or silicon validation.
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
 ---
 <p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

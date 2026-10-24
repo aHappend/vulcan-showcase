@@ -502,6 +502,370 @@ A synthesizable multi-channel direct memory access (DMA) engine featuring per-ch
 | **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
 | **License** | [MIT License](../../LICENSE) |
 
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Channel Round-Robin Descriptor DMA Engine</h1>
+  <p><strong>Queued Descriptor Rings, Fair Channel Arbitration, Buffered 32-Bit Transfers & Interrupt Status</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_Yosys_Verified-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable multi-channel direct memory access (DMA) engine featuring per-channel descriptor queues, work-conserving round-robin scheduling, buffered 32-bit memory reads/writes, and host-visible completion/error interrupt reporting.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/dma_data_fifo.sv`](rtl/dma_data_fifo.sv), [`rtl/dma_descriptor_queue.sv`](rtl/dma_descriptor_queue.sv), [`rtl/dma_read_engine.sv`](rtl/dma_read_engine.sv), [`rtl/dma_registers.sv`](rtl/dma_registers.sv), [`rtl/dma_scheduler.sv`](rtl/dma_scheduler.sv), [`rtl/dma_write_engine.sv`](rtl/dma_write_engine.sv), [`rtl/mc_dma.sv`](rtl/mc_dma.sv) |
+| **Verification Summary** | 7 synthesizable RTL modules · 9 regression configurations · Yosys synthesis verified |
+| **License** | [MIT License](../../LICENSE) |
+
 A configurable SystemVerilog subsystem for queued memory-to-memory transfers.
 
 **Highlights:** independent channel configuration, captured descriptor queues,
@@ -575,6 +939,45 @@ iverilog -g2012 -s mc_dma -t null rtl/*.sv
 
 This command checks compilation; it does not rerun the reported regression.
 Generic synthesis is not a timing, area, FPGA-deployment or silicon qualification.
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
 ---
 <p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
