@@ -1,68 +1,562 @@
-# Streaming LZ4 block decoder
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming LZ4 Block Decompression Engine</h1>
+  <p><strong>Token/Extended-Length Parser, Overlapping RLE History Copy & Malformed-Block Recovery</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-18_Seeds_%C2%B7_85,275_Bytes-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A bounded byte-stream LZ4 block decompressor supporting literal runs, multi-byte length extensions, sliding-window history replay including overlapping RLE matches (`offset < match_length`), and deterministic error flagging.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/lz4_block_decoder.sv`](rtl/lz4_block_decoder.sv) |
+| **Verification Summary** | 18 seeded runs · 1,086 compressed blocks · 85,275 decoded bytes verified |
+| **License** | [MIT License](../../LICENSE) |
 
 A bounded, single-clock SystemVerilog decoder for raw LZ4 blocks, with byte-wide
 ready/valid input and output. It handles literal and match-length extensions,
 little-endian offsets, overlapping copies, backpressure and recoverable errors.
 It is not a frame decoder or compressor and does not use a cross-block dictionary.
 
-[Vulcan website](https://ahappend.github.io/vulcan/) · [Design gallery](../../)
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-## Interface and integration
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-The synthesizable top is [`lz4_block_decoder`](rtl/lz4_block_decoder.sv).
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-| Interface | Contract |
-| --- | --- |
-| `clk`, `rst`, `abort` | One clock; synchronous active-high reset and abort. Reset has priority. |
-| `cmd_*` | One outstanding command with exact compressed and decompressed byte counts. |
-| `s_*` | Byte input with `s_last` on the declared final compressed byte. |
-| `m_*` | Byte output with first/last markers; a presented byte and its markers remain stable while stalled. |
-| `status_*` | One held terminal result, with error code and actual consumed/emitted counts. |
-| `busy` | Asserted from command acceptance through terminal-status retirement. |
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-`MAX_COMPRESSED_BYTES`, `MAX_DECOMPRESSED_BYTES` and `HISTORY_BYTES` independently
-support values from 1 through 4096. Defaults are 512, 1024 and 1024 respectively.
-History holds the current block's committed output; newly committed bytes can
-feed overlapping matches. A new block cannot read the previous block's history.
-The complete decoded block must fit both output and history limits.
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-Malformed fields, invalid offsets, length overflow, limit violations and official
-end-rule violations produce explicit errors. An ordinary error retains the
-already transferred output prefix. The producer must discard the unsent input
-suffix before submitting a new command. Consumers should use terminal status,
-not the output last marker alone, to determine success.
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-Reset cancels the current transaction without a terminal response. Active abort
-cancels pending, untransferred output and returns an aborted status with pre-edge
-transfer counts. Integration must respect the declared input/output lengths,
-ready/valid ownership and status retirement before starting another block.
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-## Accepted results
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-The scoped implementation completed independent engineering acceptance:
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-| Measurement | Result |
-| --- | --- |
-| Configuration and seed coverage | Six configurations at seeds 17, 43 and 89; 18 runs, including a separately compiled default without overrides |
-| Successful block comparisons | 1,086 valid blocks; 41,340 compressed bytes and 85,275 decoded bytes |
-| Independent upstream cross-check | Every valid block compared byte-for-byte with liblz4 1.9.4 |
-| Illegal parameters | Nine named, nonzero-exit range diagnostics |
-| Default generic synthesis | 8,192 history bits, 187 connected non-history sequential bits, 305 cells, no inferred latches |
-| Defect sensitivity | A swapped-offset defect was rejected by the ordinary checker with a concrete terminal-status mismatch |
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-Negative and canceled transactions are separate from the valid-block totals.
-The smallest configuration supports empty decoded blocks only; its valid decoded
-byte count is zero, not evidence of nonempty decoding. Verification also covers
-malformed input, ordered errors, reset/abort, stalls, overlapping copies, history
-isolation and successful following blocks within the tested bounds.
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-The format authority is `lz4/lz4` release `v1.10.0`,
-[`doc/lz4_Block_format.md`](https://github.com/lz4/lz4/blob/v1.10.0/doc/lz4_Block_format.md).
-Results describe directed/seeded RTL simulation and memory-preserving generic
-synthesis, not exhaustive formal proof, physical timing, area/power signoff,
-silicon measurements or a one-byte-per-cycle throughput guarantee.
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-## License
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-The published implementation and this product description use the repository's
-[MIT License](../../LICENSE).
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

@@ -1,4 +1,506 @@
-# Buffered fixed-point stream processor
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Interleaved Multi-Stream Fixed-Point Processor</h1>
+  <p><strong>Per-Channel 3-Tap FIR State Isolation, Configurable Saturation/Wrap & Elastic Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeds_%C2%B7_18,585_Retirements-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+An interleaved multi-stream fixed-point datapath maintaining independent per-channel 3-tap history state, configurable signed saturation or wrap-around arithmetic, and lossless ready/valid downstream backpressure.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/sp_arithmetic.sv`](rtl/sp_arithmetic.sv), [`rtl/sp_csr.sv`](rtl/sp_csr.sv), [`rtl/sp_frame_tracker.sv`](rtl/sp_frame_tracker.sv), [`rtl/sp_quantizer.sv`](rtl/sp_quantizer.sv), [`rtl/sp_queue.sv`](rtl/sp_queue.sv), [`rtl/stream_processor.sv`](rtl/stream_processor.sv) |
+| **Verification Summary** | 27 seeded runs · 56,945 cycles · 18,585 verified output retirements |
+| **License** | [MIT License](../../LICENSE) |
 
 A synthesizable SystemVerilog subsystem for interleaved, framed signal streams:
 three signed taps, independent channel histories, frame-stable configuration,
@@ -73,5 +575,55 @@ pending response, rejects invalid accesses without changing targeted fields,
 and gives new events priority over simultaneous write-one-to-clear operations.
 
 ---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-[Vulcan website](https://ahappend.github.io/vulcan/) · [All designs](../../README.md)
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

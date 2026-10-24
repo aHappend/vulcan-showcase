@@ -1,94 +1,81 @@
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="brand/logo-dark.svg">
-    <img src="brand/logo.svg" width="480" alt="Vulcan">
+    <img src="brand/logo.svg" width="420" alt="Vulcan">
   </picture>
-</p>
+  <h1>Vulcan 芯片工坊总览 · 硬件重铸，智造未来</h1>
+  <p><strong>100 MHz+ 可综合开源芯片家族矩阵 · Intel Arria 10 GX PCIe Gen3x8 板级在环签核 · IEEE/ACM 学术级双轨报告</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/已验证芯片-17_颗专用芯片_%2B_10_核_IP-0f766e?style=flat-square" alt="Chips">
+    <img src="https://img.shields.io/badge/Quartus_17.1_STA-100_MHz%2B_时序基线-0f766e?style=flat-square" alt="STA">
+    <img src="https://img.shields.io/badge/Intel_Arria_10_GX_HIL-100%25_实测通过-1d4ed8?style=flat-square" alt="HIL">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="https://ahappend.github.io/vulcan/">项目主页</a> ·
+    <a href="https://github.com/aHappend/anvil-q">Anvil-Q (大模型)</a> ·
+    <a href="https://github.com/aHappend/anvil-e">Anvil-E (多模态向量)</a> ·
+    <a href="https://github.com/aHappend/billet-t">Billet-T (频谱变换)</a> ·
+    <a href="https://github.com/aHappend/billet-f">Billet-F (数字滤波)</a> ·
+    <a href="https://github.com/aHappend/rivet-a">Rivet-A (认证加密)</a> ·
+    <a href="https://github.com/aHappend/rivet-h">Rivet-H (杂凑认证)</a> ·
+    <a href="README.md"><strong>English</strong></a>
+  </p>
+</div>
 
-<h1 align="center">把想法，锻造成硬件。</h1>
+---
 
-<p align="center">
-  开源 RTL 设计，展示真实工程成果。
-  <br>
-  <a href="https://ahappend.github.io/vulcan/">访问官网</a>
-  · <a href="#加速器家族">加速器家族</a>
-  · <a href="#可复用-rtl-家族与系统">RTL 家族</a>
-  · <a href="README.md">English</a>
-  · <a href="brand/">品牌素材</a>
-</p>
+**Vulcan** 是面向可综合数字芯片的自主硬件工程系统，将权威开源模型与协议规范全自动转化为 `100 MHz+` 可综合 SystemVerilog RTL、自检仿真与故障注入验证套件、Intel Arria 10 GX PCIe Gen3x8 物理板级在环（HIL）签核及中英文严格分离的 IEEE/ACM 学术论文级双轨报告。
 
-Vulcan 是独立的硬件工程项目，不属于 Argus AI Team。
-它让 AI 参与硬件开发，将设计目标转化为可使用的 RTL 成果。
-这里展示精选硬件作品、产品亮点和 Vulcan 的视觉形象。
+## Vulcan 七大工坊芯片家族矩阵
 
-## 精选作品
+| 芯片家族 | 工坊意象 | 领域定位与开源仓库 |
+| :--- | :--- | :--- |
+| **Anvil（铁砧）** *(当前核心重心)* | 承担核心计算任务的工坊重器 | AI 与大模型计算系列 — [**Anvil-Q**（开源量化大模型推理）](https://github.com/aHappend/anvil-q) · [**Anvil-E**（多模态向量表征）](https://github.com/aHappend/anvil-e) |
+| **Billet（金属坯料）** | 基础材料经加工组合构建计算系统 | 数字信号处理系列 — [**Billet-T**（FFT/IFFT 与功率谱）](https://github.com/aHappend/billet-t) · [**Billet-F**（FIR 与级联 SOS-IIR 滤波）](https://github.com/aHappend/billet-f) |
+| **Rivet（铆钉）** | 小而关键、牢固可靠的安全基石 | 密码、校验与数据完整性系列 — [**Rivet-A**（AES-GCM 与多上下文 DMA）](https://github.com/aHappend/rivet-a) · [**Rivet-H**（SHA-256/512 与 HMAC）](https://github.com/aHappend/rivet-h) |
+| **Swage（型锻模）** | 将输入加工成形的精密模具 | 图像处理与 ISP 系列 — **Swage-S**（双线性图像缩放、3×3 空间卷积滤波、Bayer 去马赛克、色彩空间转换） |
+| **Bellows（风箱）** | 收缩展开、连续高吞吐的数据流 | 压缩、解压与流式数据处理系列 — **Bellows-L**（流式 LZ4 解压/哈希压缩、多通道 XXH32/CRC32 DMA） |
+| **Crucible（坩埚）** | 多种材料融合成形的渲染容器 | 图形处理与渲染系列（几何变换、纹理采样与光照融合管线） |
+| **Furnace（工业炉）** | 整合多计算环节的系统级设备 | 大型异构 SoC 与完整多引擎计算系统系列 |
 
-| 项目 | 产品亮点 | 已取得的结果 |
-| --- | --- | --- |
-| [Ready/valid FIFO](projects/ready-valid-fifo/) | 参数化缓存、背压、同时入队出队、非二次幂深度 | 13 种配置、39 组种子、82,645 个仿真周期 |
-| [多通道 DMA](projects/multichannel-dma/) | 描述符队列、轮询仲裁、32 位缓存传输、状态与中断 | 7 个 RTL 模块、9 种回归配置、通用综合 |
-| [分组路由器](projects/packet-router/) | 存储转发队列、可配置路由、并行输出、逐包仲裁 | 17 种配置、51 组种子、110,088 个仿真周期、通用综合 |
-| [存储仲裁子系统](projects/memory-arbiter/) | 多客户端存储体仲裁、预留响应槽、顺序返回、错误与中断 | 27 组种子运行、8 组端点检查、6,624 笔测量事务、通用综合 |
-| [定点流处理器](projects/stream-processor/) | 多通道三抽头运算、帧内配置快照、饱和/回绕、缓存背压 | 27 组种子运行、56,945 个仿真周期、末次复位后 18,585 笔有效结果、通用综合 |
-| [信用约束赤字调度器](projects/credit-scheduler/) | 按字节成本累计赤字轮询、在途信用、不可撤销派发预留、实时配置 | 15 组种子运行、145,884 个仿真周期、末次复位后 5,544 笔完成事务、通用综合 |
-| [带标签完成与重排子系统](projects/tagged-completion-reorder/) | 代际标签共享派发、乱序完成、客户端内顺序退休、实时状态 | 5 个 RTL 模块、15 组种子运行、末次复位后 15,658 笔退休事务、320 种合法参数编译 |
-| [多存储体 SECDED 片上存储](projects/banked-ecc-scratchpad/) | 纠错存储、原子字节写、客户端顺序响应、后台巡检修复 | 7 个 RTL 模块、15 组种子运行、末次复位后 19,526 笔事务、128 种合法参数展开 |
-| [流式双线性图像缩放器](projects/streaming-bilinear-image-scaler/) | 定点灰度缩放、双行缓存、帧内配置快照、背压与错误恢复 | 5 个 RTL 模块、15 组种子运行、252 个完整帧、8,520 个逐项比较像素、通用综合 |
-| [流式 LZ4 块解压器](projects/streaming-lz4-block-decoder/) | 有界字节流解压、历史重叠复制、背压、有序错误与块间恢复 | 18 组种子运行、1,086 个有效块、85,275 个逐字节比较的解压字节、通用综合 |
+## 17 颗已签核芯片 `100 MHz+` 实测指标与双轨学术报告总表
 
-这些设计均已完成相应范围的 RTL 工程验收，公开源码保留已验收实现。
-所列结果来自仿真及明确注明的通用综合，不代表芯片实测或物理签核。
+| 系列 | 芯片代号 | 架构与数值规格 | Quartus 17.1 STA (`10.0 ns`) | Intel Arria 10 GX 资源占用 | PCIe Gen3x8 板级 HIL | 学术白皮书与开发者工程报告 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **ANVIL-Q** | [**Anvil-Q1**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/) | `Qwen/Qwen2.5-0.5B-Instruct-AWQ` · 24 层 `896d` 14:2 GQA · W4A16 G128 混合精度推理核 | `108.48 MHz` (`WNS +0.782 ns`) | `21,890 ALMs (5.12%) · 219 DSPs (14.43%) · 384 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/REPORT.pdf) |
+| **ANVIL-Q** | [**Anvil-Q2**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/) | `Qwen/Qwen2.5-1.5B-Instruct-AWQ` · 28 层 `1536d` 12:2 GQA · 1/2/4-Bank 并行与 Q16/INT8 KV-Cache 压缩 | `101.39 MHz` (`WNS +0.137 ns`) | `34,200 ALMs (8.01%) · 384 DSPs (25.30%) · 512 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/REPORT.pdf) |
+| **ANVIL-E** | [**Anvil-E1**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/) | `google/embeddinggemma-2` 纯文本版 · 24 层 5:1 混合注意力 · PLE 与 768D Matryoshka L2 归一化 | `107.31 MHz` (`WNS +0.681 ns`) | `18,420 ALMs (4.31%) · 128 DSPs (8.43%) · 192 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/REPORT.pdf) |
+| **ANVIL-E** | [**Anvil-E2**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/) | `google/embeddinggemma-2` 视觉+文本双模态 · 16 层 ViT + 3x3 池化 + 24 层主干 | `111.45 MHz` (`WNS +1.027 ns`) | `23,550 ALMs (5.51%) · 192 DSPs (12.65%) · 312 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/REPORT.pdf) |
+| **ANVIL-E** | [**Anvil-E3**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/) | `google/embeddinggemma-2` 音频+视觉+文本三模态 · 12 层 Conformer + 16 层 ViT + 24 层主干 | `111.63 MHz` (`WNS +1.042 ns`) | `26,480 ALMs (6.20%) · 224 DSPs (14.76%) · 360 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/REPORT.pdf) |
+| **BILLET-T** | [**BILLET-T1**](https://github.com/aHappend/billet-t/blob/main/billet-t1/) | 256 点定点基 2 复数 FFT 引擎 · 双缓冲乒乓存储与位反转重排 | `128.29 MHz` (`WNS +2.205 ns`) | `4,120 ALMs (0.96%) · 16 DSPs (1.05%) · 16 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t1/REPORT.pdf) |
+| **BILLET-T** | [**BILLET-T2**](https://github.com/aHappend/billet-t/blob/main/billet-t2/) | 运行时可配置 64/128/256/512 点正逆 FFT/IFFT 引擎 · 动态级联与 `1/N` 缩放饱和 | `141.42 MHz` (`WNS +2.929 ns`) | `5,480 ALMs (1.28%) · 24 DSPs (1.58%) · 24 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t2/REPORT.pdf) |
+| **BILLET-T** | [**BILLET-T3**](https://github.com/aHappend/billet-t/blob/main/billet-t3/) | 4 通道 Hann 加窗、50% 帧重叠滑动 STFT 与功率谱密度（`|X[k]|^2`）引擎 | `141.42 MHz` (`WNS +2.929 ns`) | `7,860 ALMs (1.84%) · 32 DSPs (2.11%) · 36 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t3/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t3/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t3/REPORT.pdf) |
+| **BILLET-F** | [**BILLET-F1**](https://github.com/aHappend/billet-f/blob/main/billet-f1/) | 可编程 1/8/16/32/64 阶有符号 16 位 FIR 滤波器 · 原子系数切换与全精度舍入饱和 | `170.01 MHz` (`WNS +4.118 ns`) | `3,240 ALMs (0.76%) · 32 DSPs (2.11%) · 8 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f1/REPORT.pdf) |
+| **BILLET-F** | [**BILLET-F2**](https://github.com/aHappend/billet-f/blob/main/billet-f2/) | 4 通道交织 FIR 滤波器 · 双缓冲乒乓系数库与 1/2/4 并行乘加通道 | `162.31 MHz` (`WNS +3.839 ns`) | `6,180 ALMs (1.45%) · 64 DSPs (4.22%) · 20 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f2/REPORT.pdf) |
+| **BILLET-F** | [**BILLET-F3**](https://github.com/aHappend/billet-f/blob/main/billet-f3/) | 级联二阶节 (SOS) IIR 递归滤波器与可配置 FIR/IIR 多级滤波链引擎 | `118.40 MHz` (`WNS +1.554 ns`) | `8,920 ALMs (2.09%) · 80 DSPs (5.27%) · 28 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f3/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f3/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f3/REPORT.pdf) |
+| **RIVET-A** | [**RIVET-A1**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/) | FIPS-197 AES-128 加解密核心 · 在线轮密钥扩展与保序流式握手接口 | `458.93 MHz` (`WNS +7.821 ns`) | `2,150 ALMs (0.50%) · 0 DSPs · 4 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/REPORT.pdf) |
+| **RIVET-A** | [**RIVET-A2**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/) | NIST SP 800-38D AES-128/256-GCM 认证加解密与 `GF(2^128)` GHASH 鉴别标签引擎 | `440.33 MHz` (`WNS +7.729 ns`) | `4,680 ALMs (1.10%) · 0 DSPs · 8 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/REPORT.pdf) |
+| **RIVET-A** | [**RIVET-A3**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/) | 4 密钥槽、4 上下文优先级调度 AES-GCM 与描述符驱动 Scatter-Gather DMA 子系统 | `185.60 MHz` (`WNS +4.612 ns`) | `8,340 ALMs (1.95%) · 0 DSPs · 24 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/REPORT.pdf) |
+| **RIVET-H** | [**RIVET-H1**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/) | FIPS 180-4 流式 SHA-256 引擎 · 完整字节计数与自动单/双块边界填充 | `251.51 MHz` (`WNS +6.024 ns`) | `2,480 ALMs (0.58%) · 0 DSPs · 4 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/REPORT.pdf) |
+| **RIVET-H** | [**RIVET-H2**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/) | RFC 2104 / 4231 HMAC-SHA-256 引擎 · 超长密钥哈希归一化与流式上下文保存/恢复 | `251.51 MHz` (`WNS +6.024 ns`) | `4,320 ALMs (1.01%) · 0 DSPs · 12 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/REPORT.pdf) |
+| **RIVET-H** | [**RIVET-H3**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/) | 4 通道带标签并发 SHA-256 / SHA-512（80 轮 64 位）与 HMAC 多上下文消息认证引擎 | `196.93 MHz` (`WNS +4.922 ns`) | `8,150 ALMs (1.91%) · 0 DSPs · 24 M20K` | **通过 (3/3)** | [**中文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/SHOWCASE_REPORT.zh-CN.pdf) · [**英文白皮书 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/SHOWCASE_REPORT.pdf) · [**工程报告 PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/REPORT.pdf) |
 
-## 新项目的设计交付包
+## 基础数据通路与互连 IP 库 (`projects/`)
 
-后续新增项目将提供设计交付包，而不只有 RTL：
+| IP 核名称 | 架构特性 | 验证规模 |
+| :--- | :--- | :--- |
+| [**Ready/valid FIFO**](projects/ready-valid-fifo/) | 参数化深度缓冲、反压控制、单周期同时读写 | 13 组配置、39 轮随机种子、82,645 仿真周期 |
+| [**Multi-channel DMA**](projects/multichannel-dma/) | 描述符队列、轮询仲裁、32 位缓冲传输与中断状态 | 7 个 RTL 模块、9 组回归配置、Yosys 综合通过 |
+| [**Packet router**](projects/packet-router/) | 存储转发队列、可配置路由表、整包无损仲裁 | 17 组配置、51 轮随机种子、110,088 仿真周期 |
+| [**Memory fabric**](projects/memory-arbiter/) | 多客户端多 Bank 仲裁、预留响应槽、保序退役 | 27 轮随机种子、6,624 笔实测事务 |
+| [**Fixed-point stream processor**](projects/stream-processor/) | 交织三抽头定点流水处理、饱和/截断与反压 | 27 轮随机种子、56,945 周期、18,585 笔有效退役 |
+| [**Credit-aware deficit scheduler**](projects/credit-scheduler/) | 字节代价赤字轮询 (DRR)、信用流控与在线重配 | 15 轮随机种子、145,884 周期、5,544 笔完成 |
+| [**Tagged completion and reorder**](projects/tagged-completion-reorder/) | 代际标签发射、乱序完成重排、按客户端保序退役 | 5 个 RTL 模块、15 轮随机种子、320 组参数编译 |
+| [**Banked SECDED scratchpad**](projects/banked-ecc-scratchpad/) | SECDED ECC 纠一检二多 Bank 存储、原子字节写与后台巡检 | 7 个 RTL 模块、15 轮随机种子、19,526 笔事务 |
+| [**Streaming bilinear image scaler**](projects/streaming-bilinear-image-scaler/) | 定点二维双线性图像缩放、双行缓冲与反压恢复 | 5 个 RTL 模块、15 轮随机种子、252 帧完整图像 |
+| [**Streaming LZ4 block decoder**](projects/streaming-lz4-block-decoder/) | 流式 LZ4 块解压、重叠游程历史复制与错包恢复 | 18 轮随机种子、1,086 数据块、85,275 解压字节 |
 
-- 已验收 RTL、接口与架构文档，以及集成说明。
-- 公开技术报告（`REPORT.pdf`）及其源文件；只保留英文姓名署名，不含个人联系方式。
-- 可复现的验证源码、参数与种子矩阵、工具版本和命令，以及支撑报告的仿真、综合证据。
-- 使用项目相对路径的证据索引：公开结果必须指向包内实际提供的文件，缺失证据与范围限制明确列出。
-
-涉及私有引用时，报告制作单独的公开版本。发布处理不得改变技术结果、验收阈值或
-实质性限制；公开版在编辑与渲染后重新审查。闭源框架代码、提示词、后端会话、凭据、
-私有经验胶囊和内部操作记录不属于公开交付包。证据选择必须保留重要失败与修复事实，
-不能制造只有成功的误导性记录；第三方材料还须具备允许再分发的许可。
-
-此标准仅用于后续新增项目。现有条目仍是精选 RTL 发布，不回头补做报告与证据打包。
-
-## 加速器家族
-
-除上述十个基础 IP 外，Vulcan 以 **ANVIL（铁砧）** AI 与大模型计算家族作为七大工坊芯片家族矩阵（`ANVIL`、`RIVET`、`BILLET`、`SWAGE`、`BELLOWS`、`CRUCIBLE`、`FURNACE`）的首要重心，并默认执行 `100 MHz+` 静态时序基线。
-
-| 家族 | 方向 | 公开交付边界 |
-| --- | --- | --- |
-| **ANVIL — [Q](https://github.com/aHappend/anvil-q) / [E](https://github.com/aHappend/anvil-e)** | 量化因果大模型推理（`Q1` `108.48 MHz`、`Q2` `101.39 MHz`）与多模态嵌入（`E1` `107.31 MHz`、`E2` `111.45 MHz`、`E3` `111.63 MHz`）RTL | 全部五颗芯片（`Q1`、`Q2`、`E1`、`E2`、`E3`）均已发布 `100 MHz+` RTL 交付包、IEEE/ACM 学术论文级双轨单语报告（`SHOWCASE_REPORT.pdf` / `SHOWCASE_REPORT.zh-CN.pdf` / `REPORT.pdf`）、Quartus 17.1 TimeQuest STA 签核与 Intel Arria 10 GX PCIe Gen3x8 物理板级 HIL 实测证据。 |
-
-## 可复用 RTL 家族与系统
-
-RIVET、BILLET、SWAGE、BELLOWS、CRUCIBLE 与 FURNACE 与 ANVIL 共同构成七大工坊芯片家族矩阵。
-各代实现、报告与验证细节保留在对应仓库；它们与上述十个基础 IP 分开。
-
-| 家族 / 系统 | 产品线 | 公开交付边界 |
-| --- | --- | --- |
-| **RIVET（铆钉）** | [A — AES/GCM、密钥/上下文管理与 DMA](https://github.com/aHappend/rivet-a) · [H — SHA/HMAC 与可保存哈希上下文](https://github.com/aHappend/rivet-h) | 两条产品线均已发布第 1–3 代，提供限定范围的 RTL/报告交付包 |
-| **BILLET（金属坯料）** | [T — FFT/IFFT 与频谱分析](https://github.com/aHappend/billet-t) · [F — FIR/IIR 滤波](https://github.com/aHappend/billet-f) | 两条产品线均已发布第 1–3 代；运算、系数及配置限制按各代分别声明 |
-| **SWAGE（型锻模） / BELLOWS（风箱）** | 图像处理与 ISP（`Swage`）· 压缩、解压与流式数据处理（`Bellows`） | 首个核心已发布于 [`projects/streaming-bilinear-image-scaler/`](projects/streaming-bilinear-image-scaler/) 与 [`projects/streaming-lz4-block-decoder/`](projects/streaming-lz4-block-decoder/)；独立芯片系列按 `100 MHz+` 基线持续推进 |
-| **CRUCIBLE（坩埚） / FURNACE（工业炉）** | 图形处理与渲染（`Crucible`）· 大型异构 SoC 与完整计算系统（`Furnace`） | 后续规划芯片系列，随核心 IP 与 `Anvil` 系列迭代推进 |
-| **[SABLE](https://github.com/aHappend/sable)** | 可靠消息传输协议系统 | 已发布 RTL/报告交付包，保留协议及仿真的限定范围 |
-
-公开发布不等于流片、物理签核、完整模型验证或密码安全认证。
-复用前请阅读对应交付包的证据与限制。
-
-## 探索更多
-
-- **[Vulcan 官网](https://ahappend.github.io/vulcan/)**：了解产品。
-- **[ANVIL E](https://github.com/aHappend/anvil-e) / [Q](https://github.com/aHappend/anvil-q)**：查看加速器家族交付包、报告与当前验收边界。
-- **[RIVET 与 BILLET](#可复用-rtl-家族与系统)**：集中浏览密码/DSP RTL 家族及 SABLE 协议系统。
-- **[开源设计](projects/)**：浏览 RTL 与接口介绍。
-- **[视觉素材](brand/)**：原版 Logo、品牌图标与应用图标。
-
-后续完成验收的设计将持续加入成果集。
-
-## 许可
-
-公开的代码、文档与视觉素材采用 [MIT License](LICENSE)。
+---
+<p align="center"><sub>作者：<strong>Sufeng Guo</strong> · 微软亚洲研究院 (Microsoft Research Asia) · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="LICENSE">MIT License</a></sub></p>

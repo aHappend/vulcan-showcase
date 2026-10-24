@@ -1,4 +1,506 @@
-# Credit-aware deficit scheduler
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Credit-Aware Deficit Round-Robin (DRR) Scheduler</h1>
+  <p><strong>Byte-Cost Quantum Accounting, Downstream Credit Flow Control & Live Runtime Reconfiguration</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-15_Seeds_%C2%B7_145,884_Cycles-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A byte-cost Deficit Round-Robin (DRR) packet scheduler combined with downstream credit accounting, per-queue quantum configuration, and glitch-free runtime weight updates.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/credit_scheduler.sv`](rtl/credit_scheduler.sv) |
+| **Verification Summary** | 15 seeded runs · 145,884 cycles · 5,544 scheduled packet completions |
+| **License** | [MIT License](../../LICENSE) |
 
 A synthesizable SystemVerilog scheduler for multiple independently buffered
 request queues. Byte-cost deficit round robin shares dispatch service while
@@ -68,5 +570,55 @@ depends on downstream readiness, sufficient configured credits and valid
 completion returns; permanent backpressure cannot have an unconditional bound.
 
 ---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-[Vulcan website](https://ahappend.github.io/vulcan/) · [All designs](../../README.md)
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

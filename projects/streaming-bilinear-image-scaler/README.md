@@ -1,8 +1,506 @@
-# Streaming bilinear image scaler
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
 
-[Vulcan](https://ahappend.github.io/vulcan/) |
-[All designs](../../README.md) |
-[MIT license](../../LICENSE)
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Streaming 2D Bilinear Fixed-Point Image Scaler</h1>
+  <p><strong>Dual-Row Line Buffers, Q8.8 Coordinate Interpolation & Lossless Ready/Valid Backpressure</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-5_RTL_Modules_%C2%B7_252_Frames-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A synthesizable streaming 2D bilinear image scaler with dual-row line buffering, Q8.8 fixed-point horizontal/vertical weight interpolation, arbitrary resolution ratios, and stall-safe ready/valid handshakes.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/scaler_coordinates.sv`](rtl/scaler_coordinates.sv), [`rtl/scaler_frame_control.sv`](rtl/scaler_frame_control.sv), [`rtl/scaler_output.sv`](rtl/scaler_output.sv), [`rtl/scaler_rows.sv`](rtl/scaler_rows.sv), [`rtl/streaming_bilinear_scaler.sv`](rtl/streaming_bilinear_scaler.sv) |
+| **Verification Summary** | 5 RTL modules · 15 seeded runs · 252 full 2D image frames scaled bit-accurately |
+| **License** | [MIT License](../../LICENSE) |
 
 A synthesizable, single-clock grayscale scaler with independent ready/valid
 pixel streams, bounded two-row storage and explicit frame ownership.
@@ -62,3 +560,57 @@ These results establish finite RTL simulation and generic synthesis, not
 exhaustive verification, a full ISP, color processing, clock-domain crossing,
 external-memory DMA, technology-mapped PPA, FPGA measurements, silicon validation
 or physical signoff.
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

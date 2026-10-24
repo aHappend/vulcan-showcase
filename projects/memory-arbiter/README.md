@@ -1,4 +1,506 @@
-# Ordered multi-client memory fabric
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Multi-Client Banked Memory Fabric & Response Reorder</h1>
+  <p><strong>Bank-Conflict Arbitration, Reserved Response Slots & Per-Client In-Order Retirement</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-27_Seeded_Runs_%C2%B7_6,624_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-client, multi-bank memory interconnect fabric that arbitrates concurrent read/write requests across independent SRAM banks while reserving response slots to guarantee deadlock-free, in-order per-client transaction retirement.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/memory_fabric.sv`](rtl/memory_fabric.sv), [`rtl/mf_bank_decode.sv`](rtl/mf_bank_decode.sv), [`rtl/mf_bank_issue.sv`](rtl/mf_bank_issue.sv), [`rtl/mf_client_queue.sv`](rtl/mf_client_queue.sv), [`rtl/mf_completion.sv`](rtl/mf_completion.sv), [`rtl/mf_csr.sv`](rtl/mf_csr.sv), [`rtl/mf_response_owner.sv`](rtl/mf_response_owner.sv), [`rtl/mf_rr_arbiter.sv`](rtl/mf_rr_arbiter.sv) |
+| **Verification Summary** | 27 seeded runs · 6,624 measured memory transactions · 0 ordering or data hazards |
+| **License** | [MIT License](../../LICENSE) |
 
 A synthesizable SystemVerilog subsystem that shares one or two external memory
 banks among independent clients while preserving each client's response order.
@@ -74,9 +576,55 @@ iverilog -g2012 -s memory_fabric -t null rtl/*.sv
 This checks compilation only; it does not rerun the reported regression.
 
 ---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-**中文简介：** 多客户端存储仲裁与响应路由子系统，支持请求排队、轮询仲裁、
-跨存储体乱序完成与客户端顺序返回、字节写使能、错误和中断。已完成 27 组必需
-配置/种子运行、8 组端点检查和默认配置通用综合；不代表物理签核。
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
 
-[Vulcan website](https://ahappend.github.io/vulcan/) · [All designs](../../README.md)
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>

@@ -1,8 +1,506 @@
-# Banked SECDED scratchpad
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
 
-[Vulcan](https://ahappend.github.io/vulcan/) |
-[All designs](../../README.md) |
-[MIT license](../../LICENSE)
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
+
+<div align="center">
+  <h1>Banked SECDED ECC Scratchpad Memory Subsystem</h1>
+  <p><strong>39-Bit Hamming SECDED Codewords, Atomic Byte-Enable Read-Modify-Write & Background Scrubbing</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/Language-SystemVerilog_2012-0f766e?style=flat-square" alt="SV2012">
+    <img src="https://img.shields.io/badge/Verification-7_RTL_Modules_%C2%B7_19,526_Txns-1d4ed8?style=flat-square" alt="Verification">
+    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
+    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
+  </p>
+  <p>
+    <a href="../../README.md">Vulcan Showcase Index</a> ·
+    <a href="rtl/">RTL Source</a> ·
+    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
+  </p>
+</div>
+
+---
+
+## Executive Summary
+
+A multi-bank scratchpad memory subsystem storing each 32-bit word as a 39-bit SECDED codeword, featuring single-error correction, double-error detection, atomic sub-word byte writes, and autonomous background scrubbing.
+
+| Dimension | Verified Deliverable |
+| :--- | :--- |
+| **RTL Modules (`rtl/`)** | [`rtl/banked_ecc_scratchpad.sv`](rtl/banked_ecc_scratchpad.sv), [`rtl/scratchpad_bank.sv`](rtl/scratchpad_bank.sv), [`rtl/scratchpad_csr.sv`](rtl/scratchpad_csr.sv), [`rtl/scratchpad_frontend.sv`](rtl/scratchpad_frontend.sv), [`rtl/scratchpad_maintenance.sv`](rtl/scratchpad_maintenance.sv), [`rtl/secded_decode.sv`](rtl/secded_decode.sv), [`rtl/secded_encode.sv`](rtl/secded_encode.sv) |
+| **Verification Summary** | 7 RTL modules · 15 seeded runs · 19,526 verified ECC read/write/scrub transactions |
+| **License** | [MIT License](../../LICENSE) |
 
 A synthesizable, single-clock scratchpad combining independent memory banks,
 ordered client responses, atomic byte writes and background error scrubbing.
@@ -65,3 +563,57 @@ SECDED guarantees are limited to the stated single-bit and double-bit fault
 domain. These results do not establish exhaustive system correctness, CDC
 support, SRAM-macro timing, technology-mapped PPA, FPGA measurements, silicon
 validation or physical signoff.
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
+
+---
+<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="../../LICENSE">MIT License</a></sub></p>
