@@ -1,91 +1,31 @@
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="brand/logo-dark.svg">
-    <img src="brand/logo.svg" width="420" alt="Vulcan">
-  </picture>
-  <h1>Vulcan Silicon Showcase · Hardware, Forged Anew</h1>
-  <p><strong>Synthesizable 100 MHz+ Open Silicon Families · Intel Arria 10 GX PCIe Gen3x8 HIL · IEEE/ACM Dual-Track Reports</strong></p>
-  <p>
-    <img src="https://img.shields.io/badge/Verified_Silicon-34%2B_Chips_%2B_10_IPs-0f766e?style=flat-square" alt="Chips">
-    <img src="https://img.shields.io/badge/Quartus_17.1_STA-100_MHz%2B_Baseline-0f766e?style=flat-square" alt="STA">
-    <img src="https://img.shields.io/badge/Intel_Arria_10_GX_HIL-100%25_Passed-1d4ed8?style=flat-square" alt="HIL">
-    <img src="https://img.shields.io/badge/Author-Sufeng_Guo_(MSRA)-334155?style=flat-square" alt="Author">
-    <img src="https://img.shields.io/badge/License-MIT-64748b?style=flat-square" alt="License">
-  </p>
-  <p>
-    <a href="https://ahappend.github.io/vulcan/">Website</a> ·
-    <a href="https://github.com/aHappend/anvil-q">Anvil-Q (LLM)</a> ·
-    <a href="https://github.com/aHappend/anvil-e">Anvil-E (Embedding)</a> ·
-    <a href="https://github.com/aHappend/hammer-v">Hammer-V (RISC-V CPU)</a> ·
-    <a href="https://github.com/aHappend/furnace-x">Furnace-X (AI SoC)</a> ·
-    <a href="https://github.com/aHappend/billet-t">Billet-T (FFT/DSP)</a> ·
-    <a href="https://github.com/aHappend/billet-f">Billet-F (FIR/IIR)</a> ·
-    <a href="https://github.com/aHappend/rivet-a">Rivet-A (AES-GCM)</a> ·
-    <a href="https://github.com/aHappend/rivet-h">Rivet-H (SHA/HMAC)</a> ·
-    <a href="https://github.com/aHappend/swage-s">Swage-S (ISP)</a> ·
-    <a href="https://github.com/aHappend/bellows-l">Bellows-L (LZ4)</a> ·
-    <a href="https://github.com/aHappend/bellows-n">Bellows-N (Smart-NIC)</a> ·
-    <a href="https://github.com/aHappend/crucible-g">Crucible-G (3D GPU)</a> ·
-    <a href="https://github.com/aHappend/sable">SABLE (Transport)</a> ·
-    <a href="README.zh-CN.md"><strong>中文文档</strong></a>
-  </p>
-</div>
+# Vulcan Silicon Showcase — Public chip-family and reusable-IP catalog
 
----
+[English](README.md) · [简体中文](README.zh-CN.md) · [Repository guide / 文件导航](REPOSITORY_GUIDE.md)
 
-**Vulcan** is an autonomous hardware engineering system that turns authoritative model and protocol specifications into synthesizable `100 MHz+` SystemVerilog RTL, self-checking verification suites, Intel Arria 10 GX PCIe Gen3x8 hardware-in-the-loop (HIL) validation, and IEEE/ACM-grade dual-track PDF publications.
+Documentation updated: 2026-11-17. This page describes a repository snapshot, not a live job dashboard.
 
-## Vulcan Nine-Family Workshop Silicon Matrix
+## Overview
 
-| Silicon Family | Workshop Metaphor | Domain & Series Repositories |
-| :--- | :--- | :--- |
-| **Anvil** *(Primary Focus)* | Heavy forge anvil bearing core compute loads | AI & Large-Model Compute — [**Anvil-Q** (`Q1/Q2/Q3/Q4`, `FP`, `HT`, `Edge`)](https://github.com/aHappend/anvil-q) · [**Anvil-E** (`E1/E2/E3` Multimodal Embeddings)](https://github.com/aHappend/anvil-e) |
-| **Hammer** | Forging hammer driving system control & instruction execution | 64-Bit RISC-V Processors — [**Hammer-V** (`V1..V4` RV64IM $\rightarrow$ RV64IMA+Sv39 Linux-Booted SoC)](https://github.com/aHappend/hammer-v) |
-| **Furnace** | Industrial furnace integrating multiple stages | Heterogeneous AI Computer SoCs — [**Furnace-X** (`X1..X4` 8-Family Unified Linux AI Computer SoC)](https://github.com/aHappend/furnace-x) |
-| **Billet** | Raw metal stock shaped and combined into systems | Digital Signal Processing — [**Billet-T** (`T1..T3` FFT/Spectral)](https://github.com/aHappend/billet-t) · [**Billet-F** (`F1..F3` FIR/SOS-IIR Filters)](https://github.com/aHappend/billet-f) |
-| **Rivet** | Small, critical, rock-solid fasteners | Cryptography & Data Integrity — [**Rivet-A** (`A1..A3` AES/GCM/DMA)](https://github.com/aHappend/rivet-a) · [**Rivet-H** (`H1..H3` SHA-256/512/HMAC)](https://github.com/aHappend/rivet-h) |
-| **Swage** | Die-forming tool shaping inputs into target forms | Image Processing & ISP — [**Swage-S** (`S1..S3` 2D Scaler `229.10 MHz`, Bayer Demosaic, CSC & Histogram)](https://github.com/aHappend/swage-s) |
-| **Bellows** | Expanding/contracting continuous high-throughput stream | Compression & Network Offload — [**Bellows-L** (`L1..L3` LZ4 + XXH32 DMA)](https://github.com/aHappend/bellows-l) · [**Bellows-N** (`N1..N3` L2/L3/L4 RSS/TCAM & QoS Shaper)](https://github.com/aHappend/bellows-n) |
-| **Crucible** | Vessel fusing diverse materials into form | 3D Graphics & Rendering — [**Crucible-G** (`G1..G3` Triangle Rasterizer, Gouraud/Bilinear Texture & Tile Deferred GPU)](https://github.com/aHappend/crucible-g) |
-| **SABLE** | Segmented acknowledged buffered link engine | Reliable Transport Silicon — [**SABLE** (4-Stream Sliding-Window Reliable Message Transport & CRC-32C)](https://github.com/aHappend/sable) |
+**Vulcan Silicon Showcase** publishes chip RTL, technical reports and verification artifacts. A navigation hub for public chip repositories and ten reusable IP examples. It is not a fleet-wide hardware signoff certificate.
 
-## Complete 34+ Chip `100 MHz+` Silicon Signoff & Dual-Track Report Index
+The chip project is public; Vulcan itself remains private and closed-source. Future public releases must be limited to chip technology and public reproducibility materials, excluding Vulcan internal architecture and operating materials. This refresh organizes documentation only; it is not a comprehensive disclosure audit of historical material and does not claim that the existing repository tree has undergone such clearance.
 
-| Series | Accelerator | Architecture & Numerical Scope | Quartus 17.1 STA (`10.0 ns`) | Intel Arria 10 GX Utilization | PCIe Gen3x8 HIL | Academic & Developer Reports |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **ANVIL-Q** | [**Anvil-Q1**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/) | `Qwen/Qwen2.5-0.5B-Instruct-AWQ` · 24L `896d` 14:2 GQA · W4A16 Group-128 GEMV | `108.48 MHz` (`WNS +0.782 ns`) | `21,890 ALMs (5.12%) · 219 DSPs (14.43%) · 384 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q1/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q2**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/) | `Qwen/Qwen2.5-1.5B-Instruct-AWQ` · 28L `1536d` 12:2 GQA · 1/2/4-Bank AWQ + Q16/INT8 KV-Cache | `101.39 MHz` (`WNS +0.137 ns`) | `34,200 ALMs (8.01%) · 384 DSPs (25.30%) · 512 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/anvil-q2/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q3**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q3/) | `Qwen/Qwen2.5-3B-Instruct-AWQ` · 36L `2048d` 8:1 GQA · 8-Bank W4A16 + INT8/INT4 KV-Cache | `100.74 MHz` (`WNS +0.073 ns`) | `63,470 ALMs · 402 DSPs` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q3/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q1-FP**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q1_fp/) | `Qwen/Qwen2.5-0.5B-Instruct` · Native BF16/FP16 Baseline (`v1.2.0-bf16`) | `101.72 MHz` (`WNS +0.169 ns`) | `98,022 ALMs · 265 DSPs` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q1_fp/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q2-FP**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q2_fp/) | `Qwen/Qwen2.5-1.5B-Instruct` · 4-Bank Native BF16/FP16 (`v1.2.0-bf16`) | `100.63 MHz` (`WNS +0.063 ns`) | `140,826 ALMs · 90 DSPs · 1 M20K` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q2_fp/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q1-HT**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q1_ht/) | `Qwen/Qwen2.5-0.5B-Instruct-AWQ` · 512b DDR4 + 64-DSP W4A16/Q16.16 (`v2.0.0-ht-ddr4`) | `145.58 MHz` (`WNS +3.131 ns`) | `6,857 ALMs · 8 DSPs` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q1_ht/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Q2-HT**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q2_ht/) | `Qwen/Qwen2.5-1.5B-Instruct-AWQ` · 512b DDR4 + 128-DSP W4A16/Q16.16 (`v2.0.0-ht-ddr4`) | `100 MHz+` (`10.0 ns`) | `234,371 ALMs · 920 DSPs` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_q2_ht/REPORT.pdf) |
-| **ANVIL-Q** | [**Anvil-Edge**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_edge/) | Hostless Edge SoC · UART + Hardware BPE Tokenizer + Closed-Loop Autoregressive FSM | `107.42 MHz` (`WNS +0.691 ns`) | `17,612 ALMs · 159 DSPs · 1 M20K` | **PASSED (3/3)** | [**Engineering PDF**](https://github.com/aHappend/anvil-q/blob/main/chips/anvil_edge/REPORT.pdf) |
-| **ANVIL-E** | [**Anvil-E1**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/) | `google/embeddinggemma-2` Text-Only · 24L 5:1 Hybrid GQA · PLE + Matryoshka 768D L2 Norm | `107.31 MHz` (`WNS +0.681 ns`) | `18,420 ALMs (4.31%) · 128 DSPs (8.43%) · 192 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e1/REPORT.pdf) |
-| **ANVIL-E** | [**Anvil-E2**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/) | `google/embeddinggemma-2` Vision+Text · 16L ViT + 3x3 Pooler + 24L Hybrid Backbone | `111.45 MHz` (`WNS +1.027 ns`) | `23,550 ALMs (5.51%) · 192 DSPs (12.65%) · 312 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e2/REPORT.pdf) |
-| **ANVIL-E** | [**Anvil-E3**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/) | `google/embeddinggemma-2` Audio+Vision+Text Trimodal · 12L Conformer + 16L ViT + 24L Backbone | `111.63 MHz` (`WNS +1.042 ns`) | `26,480 ALMs (6.20%) · 224 DSPs (14.76%) · 360 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/anvil-e/blob/main/anvil-e3/REPORT.pdf) |
-| **BILLET-T** | [**BILLET-T1**](https://github.com/aHappend/billet-t/blob/main/billet-t1/) | 256-Point Fixed-Point Radix-2 Complex FFT · Double-Buffered Ping-Pong Memory & Bit-Reversal | `128.29 MHz` (`WNS +2.205 ns`) | `4,120 ALMs (0.96%) · 16 DSPs (1.05%) · 16 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t1/REPORT.pdf) |
-| **BILLET-T** | [**BILLET-T2**](https://github.com/aHappend/billet-t/blob/main/billet-t2/) | Runtime-Configurable 64/128/256/512-Point FFT/IFFT · Stage-by-Stage Schedule & `1/N` Scaling | `141.42 MHz` (`WNS +2.929 ns`) | `5,480 ALMs (1.28%) · 24 DSPs (1.58%) · 24 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t2/REPORT.pdf) |
-| **BILLET-T** | [**BILLET-T3**](https://github.com/aHappend/billet-t/blob/main/billet-t3/) | 4-Channel Windowed 50%-Overlap STFT & Power-Spectrum (`|X[k]|^2`) Engine | `141.42 MHz` (`WNS +2.929 ns`) | `7,860 ALMs (1.84%) · 32 DSPs (2.11%) · 36 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t3/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-t/blob/main/billet-t3/REPORT.pdf) |
-| **BILLET-F** | [**BILLET-F1**](https://github.com/aHappend/billet-f/blob/main/billet-f1/) | Programmable 1/8/16/32/64-Tap Signed 16-Bit FIR · Atomic Coefficient Commit & Saturation | `170.01 MHz` (`WNS +4.118 ns`) | `3,240 ALMs (0.76%) · 32 DSPs (2.11%) · 8 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f1/REPORT.pdf) |
-| **BILLET-F** | [**BILLET-F2**](https://github.com/aHappend/billet-f/blob/main/billet-f2/) | 4-Channel Interleaved FIR · Double-Buffered Coefficient Banks & 1/2/4 Parallel MAC Lanes | `162.31 MHz` (`WNS +3.839 ns`) | `6,180 ALMs (1.45%) · 64 DSPs (4.22%) · 20 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f2/REPORT.pdf) |
-| **BILLET-F** | [**BILLET-F3**](https://github.com/aHappend/billet-f/blob/main/billet-f3/) | Cascaded Biquad SOS IIR + Configurable Multistage FIR->IIR / IIR->FIR Filter Chain | `118.40 MHz` (`WNS +1.554 ns`) | `8,920 ALMs (2.09%) · 80 DSPs (5.27%) · 28 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f3/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/billet-f/blob/main/billet-f3/REPORT.pdf) |
-| **RIVET-A** | [**RIVET-A1**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/) | FIPS-197 AES-128 Encryption/Decryption · On-the-Fly Key Schedule & Tag-Preserving Handshake | `458.93 MHz` (`WNS +7.821 ns`) | `2,150 ALMs (0.50%) · 0 DSPs · 4 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a1/REPORT.pdf) |
-| **RIVET-A** | [**RIVET-A2**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/) | NIST SP 800-38D AES-128/256-GCM Authenticated Encryption & `GF(2^128)` GHASH Tag Engine | `440.33 MHz` (`WNS +7.729 ns`) | `4,680 ALMs (1.10%) · 0 DSPs · 8 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a2/REPORT.pdf) |
-| **RIVET-A** | [**RIVET-A3**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/) | 4-Key-Slot, 4-Context Priority-Scheduled AES-GCM & Descriptor-Driven Scatter-Gather DMA | `185.60 MHz` (`WNS +4.612 ns`) | `8,340 ALMs (1.95%) · 0 DSPs · 24 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-a/blob/main/rivet-a3/REPORT.pdf) |
-| **RIVET-H** | [**RIVET-H1**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/) | FIPS 180-4 Streaming SHA-256 · Full Message-Length Accounting & Automatic 1/2-Block Padding | `251.51 MHz` (`WNS +6.024 ns`) | `2,480 ALMs (0.58%) · 0 DSPs · 4 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h1/REPORT.pdf) |
-| **RIVET-H** | [**RIVET-H2**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/) | RFC 2104 / 4231 HMAC-SHA-256 · Long-Key Normalization & Mid-Stream Context Save/Restore | `251.51 MHz` (`WNS +6.024 ns`) | `4,320 ALMs (1.01%) · 0 DSPs · 12 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h2/REPORT.pdf) |
-| **RIVET-H** | [**RIVET-H3**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/) | 4-Channel Tagged SHA-256 / SHA-512 (80-Round 64-Bit) & HMAC Multi-Context Authenticator | `196.93 MHz` (`WNS +4.922 ns`) | `8,150 ALMs (1.91%) · 0 DSPs · 24 M20K` | **PASSED (3/3)** | [**Whitepaper PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/SHOWCASE_REPORT.pdf) · [**Engineering PDF**](https://github.com/aHappend/rivet-h/blob/main/rivet-h3/REPORT.pdf) |
-| **HAMMER-V** | [**Hammer-V1..V4**](https://github.com/aHappend/hammer-v) | 4-Generation 64-Bit RISC-V CPU (`RV64IM` $\rightarrow$ `RV64IMA+Sv39` Linux-Booted SoC with OpenSBI + Linux 5.4) | `102.86 MHz` (`Hammer-V4`) | `18,202 ALMs · 78 M20K` (`V4`) | **PASSED (4/4)** | [**Series Repository & PDFs**](https://github.com/aHappend/hammer-v) |
-| **FURNACE-X** | [**Furnace-X1..X3**](https://github.com/aHappend/furnace-x) | Heterogeneous Multi-Engine AI, ISP, Audio, Crypto, Compression & RISC-V Compute SoC Series | `100 MHz+` (`10.0 ns`) | `226,557 ALMs · 114 DSPs` (`X3`) | **PASSED (3/3)** | [**Series Repository & PDFs**](https://github.com/aHappend/furnace-x) |
-| **SWAGE-S** | [**Swage-S1..S3**](https://github.com/aHappend/swage-s) | Streaming 2D Bilinear Scaler (`229.10 MHz`), 3x3 Convolution/Bayer Demosaic (`208.59 MHz`) & Full ISP (`143.39 MHz`) | `143.39–229.10 MHz` | `224–6,698 ALMs · 4–12 M20K · 6–15 DSPs` | **PASSED (3/3)** | [**Series Repository & PDFs**](https://github.com/aHappend/swage-s) |
-| **BELLOWS-L/N** | [**Bellows-L1..L3 & N1..N3**](https://github.com/aHappend/bellows-l) | Full-Duplex LZ4 Compression/Decompression + XXH32 DMA & L2/L3/L4 RSS/TCAM Smart-NIC Shaper | `100 MHz+` (`10.0 ns`) | `3–16 SV Modules / Chip` | **PASSED (6/6)** | [**Bellows-L**](https://github.com/aHappend/bellows-l) · [**Bellows-N**](https://github.com/aHappend/bellows-n) |
-| **CRUCIBLE-G** | [**Crucible-G1..G3**](https://github.com/aHappend/crucible-g) | 2D/3D Triangle Rasterizer + Z-Buffer, Gouraud/Bilinear Texture (`115.49 MHz`) & Tile Deferred GPU (`115.77 MHz`) | `115.49–115.77 MHz` | `14,114–17,635 ALMs · 129–258 M20K · 161–191 DSPs` | **PASSED (3/3)** | [**Series Repository & PDFs**](https://github.com/aHappend/crucible-g) |
+## Scope and evidence
+
+Use the [exact-directory result index](REPOSITORY_GUIDE.md). Functional simulation, synthesis, standalone/virtual-pin timing, board-bridge probing, workload readback and system-software execution are different evidence scopes. A pass at one scope does not establish another. Existing historical results are retained; this documentation refresh neither upgrades nor invalidates them.
+
+Read timing, utilization and performance values from their specific records and applicability conditions; results from differently located copies are not merged. This page makes no fleet-wide claim of physical-board completion, full-model inference, physical Linux boot or measured power/energy efficiency.
+
+## Repository guide
+
+The [repository guide](REPOSITORY_GUIDE.md) lists existing source, constraints, tests, reports and result paths. Hyphenated, underscored and `chips/` directories can be different publication copies; none is silently designated authoritative, moved or deleted.
+
+Start reproduction from the selected chip’s public specification, test instructions and scripts. Tool, input and board requirements belong to that directory. Chip experiments were not rerun as part of this documentation update.
 
 ## Reusable Datapath & Interconnect IP Gallery (`projects/`)
 
 | IP Core | Highlights | Verification Summary |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | [**Ready/valid FIFO**](projects/ready-valid-fifo/) | Parameterized buffering, backpressure, simultaneous enqueue/dequeue | 13 configs, 39 seeded runs, 82,645 cycles |
 | [**Multi-channel DMA**](projects/multichannel-dma/) | Queued descriptors, round-robin scheduling, buffered 32-bit transfers | 7 RTL modules, 9 configs, Yosys synthesis |
 | [**Packet router**](projects/packet-router/) | Store-and-forward queues, configurable routing, whole-packet arbitration | 17 configs, 51 seeded runs, 110,088 cycles |
@@ -98,4 +38,14 @@
 | [**Streaming LZ4 block decoder**](projects/streaming-lz4-block-decoder/) | Bounded byte-stream LZ4 decoding, overlapping RLE history copy | 18 seeded runs, 1,086 blocks, 85,275 decoded bytes |
 
 ---
-<p align="center"><sub>Author: <strong>Sufeng Guo</strong> · Microsoft Research Asia · <a href="mailto:sufeng_guo@smail.nju.edu.cn">sufeng_guo@smail.nju.edu.cn</a> · <a href="LICENSE">MIT License</a></sub></p>
+
+Counts in this gallery are historical summaries from the linked project publications, not fresh measurements or board acceptance. The [repository guide](REPOSITORY_GUIDE.md) lists the ten example directories and their reports.
+
+## Related projects
+
+- AI / embeddings: [Anvil-Q](https://github.com/aHappend/anvil-q), [Anvil-E](https://github.com/aHappend/anvil-e), [Anvil-QN](https://github.com/aHappend/anvil-qn), [Anvil-EN](https://github.com/aHappend/anvil-en), [Anvil-D](https://github.com/aHappend/anvil-d).
+- Systems: [Hammer-V](https://github.com/aHappend/hammer-v), [Furnace-X](https://github.com/aHappend/furnace-x).
+- DSP / vision: [Billet-F](https://github.com/aHappend/billet-f), [Billet-T](https://github.com/aHappend/billet-t), [Swage-S](https://github.com/aHappend/swage-s).
+- Data / security / graphics: [Bellows-L](https://github.com/aHappend/bellows-l), [Bellows-N](https://github.com/aHappend/bellows-n), [Rivet-A](https://github.com/aHappend/rivet-a), [Rivet-H](https://github.com/aHappend/rivet-h), [Crucible-G](https://github.com/aHappend/crucible-g), [SABLE](https://github.com/aHappend/sable).
+- [Public fleet catalog](https://github.com/aHappend/vulcan-showcase). Related independent research: [ACE-2](https://github.com/aHappend/ace-2), [ACE-3](https://github.com/aHappend/ace-3); these retain their own provenance and acceptance boundaries.
+- DSpark is a research direction, not a published chip delivery in this repository; no implementation or repository link is asserted here.
